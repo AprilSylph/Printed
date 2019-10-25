@@ -267,8 +267,8 @@
         </div>
         <footer>
             <nav>{block:Twitter}
-                <a href="https://twitter.com/{TwitterUsername}" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:HasPages}{block:Pages}
-                <a href="{URL}" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
+                <a href="https://twitter.com/{TwitterUsername}" target="_blank" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:HasPages}{block:Pages}
+                <a href="{URL}" target="_blank" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
             </nav>
             <section id="credit">
                 <p>&copy; {Title} <span style="white-space:nowrap">{CopyrightYears}</span></p>{block:IfListGroupMembers}{block:GroupMembers}
@@ -278,7 +278,7 @@
                     </a>{/block:GroupMember}
                 </section>{/block:GroupMembers}{/block:IfListGroupMembers}{block:IfPoweredByTumblr}
                 <p>{lang:Powered by Tumblr 2}</p>{/block:IfPoweredByTumblr}{block:IfThemeCredit}
-                <p>"Printed" theme by <a href="https://www.tumblr.com/themes/by/april">April Sylph</a></p>{/block:IfThemeCredit}
+                <p><a href="https://github.com/AprilSylph/Printed">&quot;Printed&quot;</a> theme by <a href="https://www.tumblr.com/themes/by/april">April Sylph</a></p>{/block:IfThemeCredit}
             </section>
         </footer>
     </body>
