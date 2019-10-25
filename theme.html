@@ -1,152 +1,152 @@
 <!DOCTYPE html>
 {block:Options}
     <meta name="image:Background Image" content="">
-	<meta name="font:Page font" content="{TitleFont}">
-	<meta name="if:Sticky navigation" content="1">
-	<meta name="if:Random link" content="1">
-	<meta name="if:Archive link" content="1">
-	<meta name="if:Display post authors" content="1">
-	<meta name="if:Search" content="1">
-	<meta name="if:Top Photos" content="1">
-	<meta name="if:List group members" content="1">
-	<meta name="if:Powered by Tumblr" content="1">
-	<meta name="if:Theme credit" content="1">
-	<meta name="text:Widget code" content="">
+    <meta name="font:Page font" content="{TitleFont}">
+    <meta name="if:Sticky navigation" content="1">
+    <meta name="if:Random link" content="1">
+    <meta name="if:Archive link" content="1">
+    <meta name="if:Display post authors" content="1">
+    <meta name="if:Search" content="1">
+    <meta name="if:Top Photos" content="1">
+    <meta name="if:List group members" content="1">
+    <meta name="if:Powered by Tumblr" content="1">
+    <meta name="if:Theme credit" content="1">
+    <meta name="text:Widget code" content="">
 {/block:Options}
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{block:PermalinkPage}{block:PostSummary}{PostSummary} — {/block:PostSummary}{/block:PermalinkPage}{Title}{block:SearchPage} — {lang:Search results for SearchQuery}{/block:SearchPage}</title>{block:Description}
-		<meta name="description" content="{MetaDescription}">{/block:Description}
-		<meta name="theme-color" content="{BackgroundColor}">
-		{MobileAppHeaders}
-		<link rel="shortcut icon" href="{Favicon}">
-		<link rel="alternate" type="application/rss+xml" href="{RSS}">
-		<link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-		<link rel="stylesheet" href="https://static.tumblr.com/2wliono/1HLpzxz0l/printed.css">
-		{PostTypographyStyles}
-		<style id="dynamic">
-		    :root {
-		        --TitleColor: {TitleColor};
-		        --TitleFont: {TitleFont};
-		        --TitleFontWeight: {TitleFontWeight};
-		        --AccentColor: {AccentColor};
-		        --BackgroundColor: {BackgroundColor};
-		        --RGBTitleColor: {RGBTitleColor};
-		        --PageFont: {font:Page font};
-		    }{block:IfBackgroundImageImage}
-		    body {
-		        background-image: url("{image:Background Image}");
-		    }{/block:IfBackgroundImageImage}
-		</style>
-		<style id="custom">{CustomCSS}</style>
-	</head>
-	<body class="{block:StretchHeaderImage}flag--stretchheaderimage {/block:StretchHeaderImage}{block:IfStickyNavigation}flag--stickynavigation {/block:IfStickyNavigation}{block:IfWidgetCode}flag--widgetcode{/block:IfWidgetCode}">
-	    <div id="iframe-padding">{block:ShowTitle}
-			<h1 id="title">{Title}</h1>{/block:ShowTitle}
-	    </div>
-		<header>{block:ShowHeaderImage}
-		    <section id="header">
-			    <img src="{HeaderImage}" alt="">
-		    </section>{/block:ShowHeaderImage}{block:ShowTitle}
-			<h1 id="headertitle">{Title}</h1>{/block:ShowTitle}
-		</header>
-		<nav>
-			<a href="/"{block:HomePage} class="current-page"{/block:HomePage}>{lang:Home}</a>{block:AskEnabled}
-			<a href="/ask"{block:AskPage} class="current-page"{/block:AskPage}>{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
-			<a href="/submit"{block:SubmitPage} class="current-page"{/block:SubmitPage}>{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:Likes}
-			<a href="/likes"{block:LikesPage} class="current-page"{/block:LikesPage}>{lang:Likes}</a>{/block:Likes}{block:ShareFollowing}
-			<a href="/following"{block:FollowingPage} class="current-page"{/block:FollowingPage}>{lang:Following}</a>{/block:ShareFollowing}{block:IfRandomLink}
-			<a href="/random">{lang:Random}</a>{/block:IfRandomLink}{block:IfArchiveLink}
-			<a href="/archive">{lang:Archive}</a>{/block:IfArchiveLink}{block:HasPages}{block:Pages}
-			<a href="{URL}" class="{CurrentState} {ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
-		</nav>
-		<div id="container">
-    		<main>{block:SearchPage}
-    			<h2>{lang:Found SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h2>{/block:SearchPage}{block:TagPage}
-    			<h2>{lang:TagResultCount posts tagged Tag}</h2>
-    			<style>
-    			    article .tags a[href="{TagURL}"] {
-    			        background-color: var(--TitleColor);
-    			    }
-    			</style>{/block:TagPage}{block:DayPage}
-    			<h2 class="day">{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h2>{/block:DayPage}{block:Posts}
-    			<article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:RebloggedFrom}{block:Date}
-    			    <style>
-    			        .post[id="{PostID}"] .reblog:not(.original)[user="{ReblogRootName}"] .user a {
-    			            color: {AccentColor};
-    			        }
-    			    </style>{/block:Date}{/block:RebloggedFrom}
-    				<section class="media">{block:Text}{block:Title}
-    					<h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
-    					<figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
-    						{LinkOpenTag}
-    							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif} title="{block:Camera} {Camera} {/block:Camera}{block:Aperture} {Aperture} {/block:Aperture}{block:Exposure} {Exposure} {/block:Exposure}{block:FocalLength} {FocalLength} {/block:FocalLength}"{/block:Exif}>
-    						{LinkCloseTag}
-    					</figure>{/block:Photo}{block:Panorama}
-    					<figure class="tmblr-full">
-    						{LinkOpenTag}
-    							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif} title="{block:Camera} {Camera} {/block:Camera}{block:Aperture} {Aperture} {/block:Aperture}{block:Exposure} {Exposure} {/block:Exposure}{block:FocalLength} {FocalLength} {/block:FocalLength}"{/block:Exif}>
-    						{LinkCloseTag}
-    					</figure>{/block:Panorama}{block:Photoset}
-    					{Photoset}{/block:Photoset}{block:Quote}
-    					<p class="npf_quote {Length}">{Quote}</p>{block:Source}
-    					<table>
-    						<tr>
-    							<td>&mdash;</td>
-    							<td>{Source}</td>
-    						</tr>
-    					</table>{/block:Source}{/block:Quote}{block:Link}
-    					<div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
-    						<a href="{URL}" {Target}>{block:Thumbnail}
-    							<div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
-    								<div class="title">{Name}</div>{block:Thumbnail}
-    							</div>{/block:Thumbnail}
-    							<div class="bottom">{block:Excerpt}
-    								<div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
-    								<div class="site-name">{Host}</div>{/block:Host}
-    							</div>
-    						</a>
-    					</div>{/block:Link}{block:Chat}{block:Title}
-    					<h1>{Title}</h1>{/block:Title}{block:Lines}
-    					<p class="npf_chat">{block:Label}
-    						<b>{Label}</b>{/block:Label}
-    						{Line}
-    					</p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
-    					{AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}
-    					{VideoEmbed-700}{/block:Video}{block:Answer}
-    					<div>
-    						<img class="avatar" src="{AskerPortraitURL-64}" alt="">&ensp;
-    						<span class="username">{lang:Asker asked 2}</span>
-    						<blockquote>{Question}</blockquote>
-    					</div>{block:Answerer}
-    					<div>
-    						<img class="avatar" src="{AnswererPortraitURL-64}" alt="">&ensp;
-    						<strong class="username">{Answerer}</strong>
-    						<blockquote>{Answer}</blockquote>
-    					</div>{/block:Answerer}{/block:Answer}
-    				</section>{block:Date}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{block:PermalinkPage}{block:PostSummary}{PostSummary} — {/block:PostSummary}{/block:PermalinkPage}{Title}{block:SearchPage} — {lang:Search results for SearchQuery}{/block:SearchPage}</title>{block:Description}
+        <meta name="description" content="{MetaDescription}">{/block:Description}
+        <meta name="theme-color" content="{BackgroundColor}">
+        {MobileAppHeaders}
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/1HLpzxz0l/printed.css">
+        {PostTypographyStyles}
+        <style id="dynamic">
+            :root {
+                --TitleColor: {TitleColor};
+                --TitleFont: {TitleFont};
+                --TitleFontWeight: {TitleFontWeight};
+                --AccentColor: {AccentColor};
+                --BackgroundColor: {BackgroundColor};
+                --RGBTitleColor: {RGBTitleColor};
+                --PageFont: {font:Page font};
+            }{block:IfBackgroundImageImage}
+            body {
+                background-image: url("{image:Background Image}");
+            }{/block:IfBackgroundImageImage}
+        </style>
+        <style id="custom">{CustomCSS}</style>
+    </head>
+    <body class="{block:StretchHeaderImage}flag--stretchheaderimage {/block:StretchHeaderImage}{block:IfStickyNavigation}flag--stickynavigation {/block:IfStickyNavigation}{block:IfWidgetCode}flag--widgetcode{/block:IfWidgetCode}">
+        <div id="iframe-padding">{block:ShowTitle}
+            <h1 id="title">{Title}</h1>{/block:ShowTitle}
+        </div>
+        <header>{block:ShowHeaderImage}
+            <section id="header">
+                <img src="{HeaderImage}" alt="">
+            </section>{/block:ShowHeaderImage}{block:ShowTitle}
+            <h1 id="headertitle">{Title}</h1>{/block:ShowTitle}
+        </header>
+        <nav>
+            <a href="/"{block:HomePage} class="current-page"{/block:HomePage}>{lang:Home}</a>{block:AskEnabled}
+            <a href="/ask"{block:AskPage} class="current-page"{/block:AskPage}>{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}
+            <a href="/submit"{block:SubmitPage} class="current-page"{/block:SubmitPage}>{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:Likes}
+            <a href="/likes"{block:LikesPage} class="current-page"{/block:LikesPage}>{lang:Likes}</a>{/block:Likes}{block:ShareFollowing}
+            <a href="/following"{block:FollowingPage} class="current-page"{/block:FollowingPage}>{lang:Following}</a>{/block:ShareFollowing}{block:IfRandomLink}
+            <a href="/random">{lang:Random}</a>{/block:IfRandomLink}{block:IfArchiveLink}
+            <a href="/archive">{lang:Archive}</a>{/block:IfArchiveLink}{block:HasPages}{block:Pages}
+            <a href="{URL}" class="{CurrentState} {ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
+        </nav>
+        <div id="container">
+            <main>{block:SearchPage}
+                <h2>{lang:Found SearchResultCount results for SearchQuery}{block:NoSearchResults}{lang:No search results for SearchQuery}{/block:NoSearchResults}</h2>{/block:SearchPage}{block:TagPage}
+                <h2>{lang:TagResultCount posts tagged Tag}</h2>
+                <style>
+                    article .tags a[href="{TagURL}"] {
+                        background-color: var(--TitleColor);
+                    }
+                </style>{/block:TagPage}{block:DayPage}
+                <h2 class="day">{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h2>{/block:DayPage}{block:Posts}
+                <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:RebloggedFrom}{block:Date}
+                    <style>
+                        .post[id="{PostID}"] .reblog:not(.original)[user="{ReblogRootName}"] .user a {
+                            color: {AccentColor};
+                        }
+                    </style>{/block:Date}{/block:RebloggedFrom}
+                    <section class="media">{block:Text}{block:Title}
+                        <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
+                        <figure{block:HighRes} class="tmblr-full"{/block:HighRes}>
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif} title="{block:Camera} {Camera} {/block:Camera}{block:Aperture} {Aperture} {/block:Aperture}{block:Exposure} {Exposure} {/block:Exposure}{block:FocalLength} {FocalLength} {/block:FocalLength}"{/block:Exif}>
+                            {LinkCloseTag}
+                        </figure>{/block:Photo}{block:Panorama}
+                        <figure class="tmblr-full">
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif} title="{block:Camera} {Camera} {/block:Camera}{block:Aperture} {Aperture} {/block:Aperture}{block:Exposure} {Exposure} {/block:Exposure}{block:FocalLength} {FocalLength} {/block:FocalLength}"{/block:Exif}>
+                            {LinkCloseTag}
+                        </figure>{/block:Panorama}{block:Photoset}
+                        {Photoset}{/block:Photoset}{block:Quote}
+                        <p class="npf_quote {Length}">{Quote}</p>{block:Source}
+                        <table>
+                            <tr>
+                                <td>&mdash;</td>
+                                <td>{Source}</td>
+                            </tr>
+                        </table>{/block:Source}{/block:Quote}{block:Link}
+                        <div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
+                            <a href="{URL}" {Target}>{block:Thumbnail}
+                                <div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
+                                    <div class="title">{Name}</div>{block:Thumbnail}
+                                </div>{/block:Thumbnail}
+                                <div class="bottom">{block:Excerpt}
+                                    <div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
+                                    <div class="site-name">{Host}</div>{/block:Host}
+                                </div>
+                            </a>
+                        </div>{/block:Link}{block:Chat}{block:Title}
+                        <h1>{Title}</h1>{/block:Title}{block:Lines}
+                        <p class="npf_chat">{block:Label}
+                            <b>{Label}</b>{/block:Label}
+                            {Line}
+                        </p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
+                        {AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}
+                        {VideoEmbed-700}{/block:Video}{block:Answer}
+                        <div>
+                            <img class="avatar" src="{AskerPortraitURL-64}" alt="">&ensp;
+                            <span class="username">{lang:Asker asked 2}</span>
+                            <blockquote>{Question}</blockquote>
+                        </div>{block:Answerer}
+                        <div>
+                            <img class="avatar" src="{AnswererPortraitURL-64}" alt="">&ensp;
+                            <strong class="username">{Answerer}</strong>
+                            <blockquote>{Answer}</blockquote>
+                        </div>{/block:Answerer}{/block:Answer}
+                    </section>{block:Date}
                     <section class="info">
-        			    <style>
-        			        .post[id="{PostID}"] .timestamp a:empty::after {{block:NotReblog}{block:IfDisplayPostAuthors}
-        			            content: "{PostAuthorName}";{/block:IfDisplayPostAuthors}{/block:NotReblog}{block:RebloggedFrom}
-        			            content: "{ReblogParentName}";{/block:RebloggedFrom}
-        			        }{block:ContentSource}{block:NoSourceLogo}
-        			        .post[id="{PostID}"] .source a:empty::after {
-        			            content: "{SourceTitle}";
-        			        }{/block:NoSourceLogo}{/block:ContentSource}
-        			    </style>
-        			    <p class="date">
-        			        <b>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</b>
-    			        </p>
+                        <style>
+                            .post[id="{PostID}"] .timestamp a:empty::after {{block:NotReblog}{block:IfDisplayPostAuthors}
+                                content: "{PostAuthorName}";{/block:IfDisplayPostAuthors}{/block:NotReblog}{block:RebloggedFrom}
+                                content: "{ReblogParentName}";{/block:RebloggedFrom}
+                            }{block:ContentSource}{block:NoSourceLogo}
+                            .post[id="{PostID}"] .source a:empty::after {
+                                content: "{SourceTitle}";
+                            }{/block:NoSourceLogo}{/block:ContentSource}
+                        </style>
+                        <p class="date">
+                            <b>{DayOfWeek} {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</b>
+                        </p>
                         <p class="timestamp">
                             <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}.{Beats}">{block:NotReblog}{block:IfDisplayPostAuthors}
                                 <a href="{PostAuthorURL}">{PostAuthorTitle}</a> &middot;{/block:IfDisplayPostAuthors}{/block:NotReblog}{block:RebloggedFrom}
                                 {lang:Reblogged from ReblogParentTitle 2} &middot;{/block:RebloggedFrom}
                                 {12Hour}:{Minutes}{AmPm}
                             </time>{block:NoteCount}
-    				        &middot; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+                            &middot; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
                         </p>{block:ContentSource}
                         <p class="source">{block:SourceLogo}
                             <a href="{SourceURL}"><img src="{BlackLogoURL}" alt="{lang:Source}: {SourceTitle}"></a>{/block:SourceLogo}{block:NoSourceLogo}{block:NotReblog}
@@ -154,132 +154,132 @@
                             {lang:Originally from ReblogRootTitle 2}{/block:RebloggedFrom}{/block:NoSourceLogo}
                         </p>{/block:ContentSource}
                     </section>{/block:Date}
-    				<section class="body">{block:NotReblog}
-    					<div class="original">{block:Text}
-    						{Body}{/block:Text}{block:Photo}{block:Caption}
-    						{Caption}{/block:Caption}{/block:Photo}{block:Panorama}{block:Caption}
-    						{Caption}{/block:Caption}{/block:Panorama}{block:Photoset}{block:Caption}
-    						{Caption}{/block:Caption}{/block:Photoset}{block:Link}{block:Description}
-    						{Description}{/block:Description}{/block:Link}{block:Audio}{block:Caption}
-    						{Caption}{/block:Caption}{/block:Audio}{block:Video}{block:Caption}
-    						{Caption}{/block:Caption}{/block:Video}{block:Answer}
-    						{Answer}{/block:Answer}
-    					</div>{/block:NotReblog}{block:Reblogs}
-    					<div class="reblog {block:isOriginalEntry}original{/block:isOriginalEntry}" user="{Username}">
-    						<p class="user">{block:HasPermalink}
-    							<a href="{Permalink}" target="_blank">{/block:HasPermalink}{block:HasAvatar}
-    								<img class="avatar" src="{PortraitURL-64}" alt="">&ensp;{/block:HasAvatar}
-    								<strong class="username{block:IsDeactivated}  deactivated{/block:IsDeactivated}">{Username}</strong>{block:HasPermalink}
-    							</a>{/block:HasPermalink}
-    						</p>
-    						{Body}
-    					</div>{/block:Reblogs}
-    				</section>{block:Date}
-    				<section class="meta">{block:HasTags}
-    				    <p class="tags">{block:Tags}
-    				        <a href="{TagURL}">{Tag}</a>{/block:Tags}
-    				    </p>{/block:HasTags}{block:IndexPage}
-    				    <p class="permalink">
-    				        <a href="{Permalink}">{lang:Permalink}</a>
-    				    </p>{/block:IndexPage}
-    				</section>{/block:Date}
-    			</article>{/block:Posts}
-    			<p id="pagination" class="clearfix">{block:Pagination}{block:PreviousPage}
-    				<a id="previous" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}{block:NextPage}
-    				<a id="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}{/block:Pagination}{block:PermalinkPagination}{block:PreviousPost}
-    				<a id="previous" href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}{block:NextPost}
-    				<a id="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}{/block:PermalinkPagination}{block:DayPagination}{block:PreviousDayPage}
-    				<a id="previous" href="{PreviousDayPage}">{lang:Previous day}</a>{/block:PreviousDayPage}{block:NextDayPage}
-    				<a id="next" href="{NextDayPage}">{lang:Next day}</a>{/block:NextDayPage}{/block:DayPagination}
-    			</p>{block:PostNotes}
-			    <div id="notes">{PostNotes}</div>{/block:PostNotes}
-    		</main>
-    		<aside>{block:IfSearch}
-    		    <section id="search">
-    		        <form action="/search" method="get">
-    		            <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
-    		        </form>
-    		    </section>{/block:IfSearch}{block:IfTopPhotos}{block:IndexPage}{block:HasHighlightedPosts}
-    		    <section id="popular">
-    		        <h3>{lang:Top Photos}</h3>
-    		        <div>{block:HighlightedPosts}
-        		        <a href="{Permalink}" style="background: url('{PhotoURL-250}') center/cover no-repeat"></a>{/block:HighlightedPosts}
-        		    </div>
-    		    </section>{/block:HasHighlightedPosts}{/block:IndexPage}{/block:IfTopPhotos}{block:RelatedPosts}
-    		    <section id="related">
-    		        <h3>{lang:Related Posts}</h3>{block:Posts}
-        			<article id="{PostID}" class="related {PostType} post">
-        			    <a href="{Permalink}">
-            				<section class="media">{block:Text}{block:Title}
-            					<h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
-            					<figure>
-            						<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-            					</figure>{/block:Photo}{block:Panorama}
-            					<figure class="tmblr-full">
-        							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-            					</figure>{/block:Panorama}{block:Photoset}
-            					{Photoset}{/block:Photoset}{block:Quote}
-            					<p class="npf_quote {Length}">{Quote}</p>{/block:Quote}{block:Link}
-            					<div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
-            						<span>{block:Thumbnail}
-            							<div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
-            								<div class="title">{Name}</div>{block:Thumbnail}
-            							</div>{/block:Thumbnail}
-            							<div class="bottom">{block:Excerpt}
-            								<div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
-            								<div class="site-name">{Host}</div>{/block:Host}
-            							</div>
-            						</span>
-            					</div>{/block:Link}{block:Chat}{block:Title}
-            					<h1>{Title}</h1>{/block:Title}{block:Lines}
-            					<p class="npf_chat">{block:Label}
-            						<b>{Label}</b>{/block:Label}
-            						{Line}
-            					</p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
-            					{AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}{block:VideoThumbnail}
+                    <section class="body">{block:NotReblog}
+                        <div class="original">{block:Text}
+                            {Body}{/block:Text}{block:Photo}{block:Caption}
+                            {Caption}{/block:Caption}{/block:Photo}{block:Panorama}{block:Caption}
+                            {Caption}{/block:Caption}{/block:Panorama}{block:Photoset}{block:Caption}
+                            {Caption}{/block:Caption}{/block:Photoset}{block:Link}{block:Description}
+                            {Description}{/block:Description}{/block:Link}{block:Audio}{block:Caption}
+                            {Caption}{/block:Caption}{/block:Audio}{block:Video}{block:Caption}
+                            {Caption}{/block:Caption}{/block:Video}{block:Answer}
+                            {Answer}{/block:Answer}
+                        </div>{/block:NotReblog}{block:Reblogs}
+                        <div class="reblog {block:isOriginalEntry}original{/block:isOriginalEntry}" user="{Username}">
+                            <p class="user">{block:HasPermalink}
+                                <a href="{Permalink}" target="_blank">{/block:HasPermalink}{block:HasAvatar}
+                                    <img class="avatar" src="{PortraitURL-64}" alt="">&ensp;{/block:HasAvatar}
+                                    <strong class="username{block:IsDeactivated}  deactivated{/block:IsDeactivated}">{Username}</strong>{block:HasPermalink}
+                                </a>{/block:HasPermalink}
+                            </p>
+                            {Body}
+                        </div>{/block:Reblogs}
+                    </section>{block:Date}
+                    <section class="meta">{block:HasTags}
+                        <p class="tags">{block:Tags}
+                            <a href="{TagURL}">{Tag}</a>{/block:Tags}
+                        </p>{/block:HasTags}{block:IndexPage}
+                        <p class="permalink">
+                            <a href="{Permalink}">{lang:Permalink}</a>
+                        </p>{/block:IndexPage}
+                    </section>{/block:Date}
+                </article>{/block:Posts}
+                <p id="pagination" class="clearfix">{block:Pagination}{block:PreviousPage}
+                    <a id="previous" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}{block:NextPage}
+                    <a id="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}{/block:Pagination}{block:PermalinkPagination}{block:PreviousPost}
+                    <a id="previous" href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}{block:NextPost}
+                    <a id="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}{/block:PermalinkPagination}{block:DayPagination}{block:PreviousDayPage}
+                    <a id="previous" href="{PreviousDayPage}">{lang:Previous day}</a>{/block:PreviousDayPage}{block:NextDayPage}
+                    <a id="next" href="{NextDayPage}">{lang:Next day}</a>{/block:NextDayPage}{/block:DayPagination}
+                </p>{block:PostNotes}
+                <div id="notes">{PostNotes}</div>{/block:PostNotes}
+            </main>
+            <aside>{block:IfSearch}
+                <section id="search">
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="{lang:Search}" autocomplete="off" value="{SearchQuery}"/>
+                    </form>
+                </section>{/block:IfSearch}{block:IfTopPhotos}{block:IndexPage}{block:HasHighlightedPosts}
+                <section id="popular">
+                    <h3>{lang:Top Photos}</h3>
+                    <div>{block:HighlightedPosts}
+                        <a href="{Permalink}" style="background: url('{PhotoURL-250}') center/cover no-repeat"></a>{/block:HighlightedPosts}
+                    </div>
+                </section>{/block:HasHighlightedPosts}{/block:IndexPage}{/block:IfTopPhotos}{block:RelatedPosts}
+                <section id="related">
+                    <h3>{lang:Related Posts}</h3>{block:Posts}
+                    <article id="{PostID}" class="related {PostType} post">
+                        <a href="{Permalink}">
+                            <section class="media">{block:Text}{block:Title}
+                                <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
+                                <figure>
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                                </figure>{/block:Photo}{block:Panorama}
+                                <figure class="tmblr-full">
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                                </figure>{/block:Panorama}{block:Photoset}
+                                {Photoset}{/block:Photoset}{block:Quote}
+                                <p class="npf_quote {Length}">{Quote}</p>{/block:Quote}{block:Link}
+                                <div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
+                                    <span>{block:Thumbnail}
+                                        <div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
+                                            <div class="title">{Name}</div>{block:Thumbnail}
+                                        </div>{/block:Thumbnail}
+                                        <div class="bottom">{block:Excerpt}
+                                            <div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
+                                            <div class="site-name">{Host}</div>{/block:Host}
+                                        </div>
+                                    </span>
+                                </div>{/block:Link}{block:Chat}{block:Title}
+                                <h1>{Title}</h1>{/block:Title}{block:Lines}
+                                <p class="npf_chat">{block:Label}
+                                    <b>{Label}</b>{/block:Label}
+                                    {Line}
+                                </p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
+                                {AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}{block:VideoThumbnail}
                                 {VideoThumbnailURL}{/block:VideoThumbnail}{/block:Video}{block:Answer}
-            					<div>
-            						<img class="avatar" src="{AskerPortraitURL-64}" alt="">
-            						<strong class="username">{Asker}</strong>
-            						<blockquote>{Question}</blockquote>
-            					</div>{/block:Answer}
-            				</section>
-            			</a>
-        				<section class="body">{block:NotReblog}
-        					<div class="original">{block:Text}
-        						{Body}{/block:Text}
-        					</div>{/block:NotReblog}{block:Reblogs}{block:isOriginalEntry}
-        					<div class="reblog original">
-        						{Body}
-        					</div>{/block:isOriginalEntry}{/block:Reblogs}
-        				</section>{block:Text}
-        				<p><a href="{Permalink}">{lang:Keep reading}</a></p>{/block:Text}
-        			</article>{/block:Posts}
-    		    </section>{/block:RelatedPosts}{block:ShowDescription}
-    		    <section id="about" class="clearfix">{block:ShowAvatar}
-    		        <img id="avatar" class="{AvatarShape}" src="{PortraitURL-128}" alt="{Name}">{/block:ShowAvatar}
-    		        <div id="description">{Description}</div>
-    		    </section>{/block:ShowDescription}{block:IfWidgetCode}
-    		    <section id="widget">
-    		        {text:Widget code}
-    		    </section>{/block:IfWidgetCode}
-    		</aside>
-    	</div>
-		<footer>
-    		<nav>{block:Twitter}
-		        <a href="https://twitter.com/{TwitterUsername}" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:HasPages}{block:Pages}
-    			<a href="{URL}" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
-    		</nav>
-    		<section id="credit">
-    		    <p>&copy; {Title} <span style="white-space:nowrap">{CopyrightYears}</span></p>{block:IfListGroupMembers}{block:GroupMembers}
-    			<section id="members">{block:GroupMember}
-    				<a href="{GroupMemberURL}" title="{GroupMemberTitle}">
-    					<img src="{GroupMemberPortraitURL-128}" alt="{GroupMemberName}">
-    				</a>{/block:GroupMember}
-    			</section>{/block:GroupMembers}{/block:IfListGroupMembers}{block:IfPoweredByTumblr}
-    		    <p>{lang:Powered by Tumblr 2}</p>{/block:IfPoweredByTumblr}{block:IfThemeCredit}
-    		    <p>"Printed" theme by <a href="https://www.tumblr.com/themes/by/april">April Sylph</a></p>{/block:IfThemeCredit}
-    		</section>
-		</footer>
-	</body>
+                                <div>
+                                    <img class="avatar" src="{AskerPortraitURL-64}" alt="">
+                                    <strong class="username">{Asker}</strong>
+                                    <blockquote>{Question}</blockquote>
+                                </div>{/block:Answer}
+                            </section>
+                        </a>
+                        <section class="body">{block:NotReblog}
+                            <div class="original">{block:Text}
+                                {Body}{/block:Text}
+                            </div>{/block:NotReblog}{block:Reblogs}{block:isOriginalEntry}
+                            <div class="reblog original">
+                                {Body}
+                            </div>{/block:isOriginalEntry}{/block:Reblogs}
+                        </section>{block:Text}
+                        <p><a href="{Permalink}">{lang:Keep reading}</a></p>{/block:Text}
+                    </article>{/block:Posts}
+                </section>{/block:RelatedPosts}{block:ShowDescription}
+                <section id="about" class="clearfix">{block:ShowAvatar}
+                    <img id="avatar" class="{AvatarShape}" src="{PortraitURL-128}" alt="{Name}">{/block:ShowAvatar}
+                    <div id="description">{Description}</div>
+                </section>{/block:ShowDescription}{block:IfWidgetCode}
+                <section id="widget">
+                    {text:Widget code}
+                </section>{/block:IfWidgetCode}
+            </aside>
+        </div>
+        <footer>
+            <nav>{block:Twitter}
+                <a href="https://twitter.com/{TwitterUsername}" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:HasPages}{block:Pages}
+                <a href="{URL}" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
+            </nav>
+            <section id="credit">
+                <p>&copy; {Title} <span style="white-space:nowrap">{CopyrightYears}</span></p>{block:IfListGroupMembers}{block:GroupMembers}
+                <section id="members">{block:GroupMember}
+                    <a href="{GroupMemberURL}" title="{GroupMemberTitle}">
+                        <img src="{GroupMemberPortraitURL-128}" alt="{GroupMemberName}">
+                    </a>{/block:GroupMember}
+                </section>{/block:GroupMembers}{/block:IfListGroupMembers}{block:IfPoweredByTumblr}
+                <p>{lang:Powered by Tumblr 2}</p>{/block:IfPoweredByTumblr}{block:IfThemeCredit}
+                <p>"Printed" theme by <a href="https://www.tumblr.com/themes/by/april">April Sylph</a></p>{/block:IfThemeCredit}
+            </section>
+        </footer>
+    </body>
 </html>
