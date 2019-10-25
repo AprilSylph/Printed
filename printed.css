@@ -154,7 +154,7 @@ main > h3 {
 }
 
 main article {
-    padding: 20px;
+    padding: 30px;
 }
 main article + article,
 main article:first-of-type:not(:first-child) {
@@ -165,7 +165,7 @@ main article:last-of-type {
 }
 
 article .media h1 {
-    margin-top: calc(0.67em - 20px);
+    margin-top: calc(0.67em - 30px);
 }
 article.photo section.media figure.tmblr-full {
     margin-top: -15px;
