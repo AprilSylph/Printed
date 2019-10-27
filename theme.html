@@ -75,7 +75,7 @@
                 <article {block:Date}id="{PostID}" {/block:Date}class="{PostType} post">{block:RebloggedFrom}{block:Date}
                     <style>
                         .post[id="{PostID}"] .reblog:not(.original)[user="{ReblogRootName}"] .user a {
-                            color: {AccentColor};
+                            color: var(--AccentColor);
                         }
                     </style>{/block:Date}{/block:RebloggedFrom}
                     <section class="media">{block:Text}{block:Title}
