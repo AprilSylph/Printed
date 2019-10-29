@@ -22,7 +22,6 @@ blockquote {
 }
 figure {
     margin: 0;
-    text-align: center;
 }
 p:empty {
     display: none;
@@ -167,10 +166,11 @@ main article:last-of-type {
 article .media h1 {
     margin-top: calc(0.67em - 30px);
 }
-article.photo section.media figure.tmblr-full {
+article.photo .media figure.tmblr-full {
     margin-top: -15px;
 }
-article.photo section.media {
+article.photo .media,
+article.photo .media figure {
     text-align: center;
 }
 .html_photoset iframe {
@@ -248,9 +248,6 @@ article .body .reblog .user .username {
 }
 article .body .reblog :last-child {
     margin-bottom: 0;
-}
-article .body .reblog figure {
-    text-align: initial;
 }
 
 :not(.npf_row) > figure.tmblr-full,
