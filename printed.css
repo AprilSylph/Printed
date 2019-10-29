@@ -365,6 +365,16 @@ li.note .avatar {
 li.note blockquote {
     margin-left: calc(16px + 1ch);
 }
+li.note blockquote a {
+    color: var(--TitleColor);
+}
+li.note .answer_content {
+    display: block;
+    margin: 1em 0;
+    margin-left: calc(16px + 1ch);
+    border-left: 0.5ch solid rgba(var(--RGBTitleColor),0.2);
+    padding-left: 1em;
+}
 
 aside section:empty {
     display: none;
