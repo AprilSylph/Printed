@@ -464,7 +464,6 @@ body > footer {
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: rgba(var(--RGBTitleColor), 0.9);
-    text-align: center;
     padding-bottom: 1em;
 }
 @media only screen and (orientation: portrait) {
@@ -498,6 +497,20 @@ footer nav a {
 }
 footer nav a:not(.external-page) {
     display: none;
+}
+[class^="socicon-"], [class*=" socicon-"] {
+    color: white;
+    padding: 0.5ch;
+    border-radius: 0.5ch;
+}
+.socicon-twitter {
+    background-color: #1da1f2;
+}
+.socicon-rss {
+    background-color: #f26109;
+}
+#credit {
+    text-align: center;
 }
 #members {
     display: flex;

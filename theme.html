@@ -25,7 +25,8 @@
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/vYpq05exc/printed.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/jIyq0rxcr/printed.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Uqtq0rvqb/socicon.css">
         {PostTypographyStyles}
         <style id="dynamic">
             :root {
@@ -268,8 +269,8 @@
         </div>
         <footer>
             <nav>{block:Twitter}
-                <a href="https://twitter.com/{TwitterUsername}" target="_blank" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:IfRSSLink}
-                <a href="{RSS}" target="_blank" class="external-page">{lang:RSS feed}</a>{/block:IfRSSLink}{block:HasPages}{block:Pages}
+                <a href="https://twitter.com/{TwitterUsername}" target="_blank" class="external-page"><span class="socicon-twitter"></span>&ensp;@{TwitterUsername}</a>{/block:Twitter}{block:IfRSSLink}
+                <a href="{RSS}" target="_blank" class="external-page"><span class="socicon-rss"></span>&ensp;{lang:Subscribe}</a>{/block:IfRSSLink}{block:HasPages}{block:Pages}
                 <a href="{URL}" target="_blank" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
             </nav>
             <section id="credit">
