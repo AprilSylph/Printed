@@ -8,6 +8,7 @@
     <meta name="if:Display post authors" content="1">
     <meta name="if:Search" content="1">
     <meta name="if:Top Photos" content="1">
+    <meta name="if:RSS link" content="1">
     <meta name="if:List group members" content="1">
     <meta name="if:Powered by Tumblr" content="1">
     <meta name="if:Theme credit" content="1">
@@ -267,7 +268,8 @@
         </div>
         <footer>
             <nav>{block:Twitter}
-                <a href="https://twitter.com/{TwitterUsername}" target="_blank" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:HasPages}{block:Pages}
+                <a href="https://twitter.com/{TwitterUsername}" target="_blank" class="external-page">@{TwitterUsername}</a>{/block:Twitter}{block:IfRSSLink}
+                <a href="{RSS}" target="_blank" class="external-page">{lang:RSS feed}</a>{/block:IfRSSLink}{block:HasPages}{block:Pages}
                 <a href="{URL}" target="_blank" class="{ExternalState}">{Label}</a>{/block:Pages}{/block:HasPages}
             </nav>
             <section id="credit">
