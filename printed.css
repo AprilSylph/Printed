@@ -229,6 +229,8 @@ article.quote .body {
 article .body .reblog:not(.original) {
     margin: 1em 0;
     padding: 15px;
+    padding-bottom: 0;
+    border-bottom: 1px solid transparent;
     border-radius: 10px;
     background-color: rgba(var(--RGBTitleColor),0.075);
 }
@@ -249,9 +251,6 @@ article .body .reblog .user .avatar {
 article .body .reblog .user .avatar,
 article .body .reblog .user .username {
     vertical-align: middle;
-}
-article .body .reblog :last-child {
-    margin-bottom: 0;
 }
 
 article .body .original > figure.tmblr-full,
