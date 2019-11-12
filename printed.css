@@ -37,12 +37,16 @@ body:not(.flag--stickynavigation) .iframe-controls--phone-mobile {
 }
 #iframe-padding {
     height: 54px;
+    width: 100%;
     background-color: inherit;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 99;
+    z-index: 98;
     display: none;
+}
+body.flag--showheaderimage.flag--stretchheaderimage #iframe-padding {
+    position: fixed;
 }
 body:not(.flag--stickynavigation) #iframe-padding {
 	border-bottom: 1px solid rgba(var(--RGBTitleColor),0.2);
@@ -72,6 +76,7 @@ header {
     justify-content: center;
     align-items: center;
     max-height: var(--HeaderHeight);
+    z-index: 99;
 }
 body.flag--stretchheaderimage #header {
     width: 100%;
@@ -82,10 +87,9 @@ body.flag--stretchheaderimage #header img {
 #headertitle {
     font-family: var(--TitleFont);
     font-weight: var(--TitleFontWeight);
-    display: none;
 }
-body.tmblr-iframe-pushdown #headertitle {
-    display: block;
+body.tmblr-iframe-overlay:not(.flag--showheaderimage) #headertitle {
+    display: none;
 }
 
 body > nav {
