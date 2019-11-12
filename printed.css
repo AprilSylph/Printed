@@ -71,6 +71,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: var(--HeaderHeight);
 }
 body.flag--stretchheaderimage #header {
     width: 100%;

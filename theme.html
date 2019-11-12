@@ -2,6 +2,9 @@
 {block:Options}
     <meta name="image:Background Image" content="">
     <meta name="font:Page font" content="{TitleFont}">
+    <meta name="select:Header height" content="350px" title="Medium">
+    <meta name="select:Header height" content="700px" title="Large">
+    <meta name="select:Header height" content="100vh" title="Maximum">
     <meta name="if:Sticky navigation" content="1">
     <meta name="if:Random link" content="1">
     <meta name="if:Archive link" content="1">
@@ -25,7 +28,7 @@
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/zbRq0ry89/printed.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/TeSq0voij/printed.css">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Uqtq0rvqb/socicon.css">
         {PostTypographyStyles}
         <style id="dynamic">
@@ -37,6 +40,7 @@
                 --BackgroundColor: {BackgroundColor};
                 --RGBTitleColor: {RGBTitleColor};
                 --PageFont: {font:Page font};
+                --HeaderHeight: {select:Header height};
             }{block:IfBackgroundImageImage}
             body {
                 background-image: url("{image:Background Image}");
