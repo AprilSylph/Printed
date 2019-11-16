@@ -448,26 +448,6 @@ body.flag--widgetcode:not(.flag--stickynavigation)[class*="tmblr-iframe"] #widge
     padding-bottom: 100%;
 }
 
-#related {
-    display: none;
-}
-article + article.related {
-    margin-top: 2em;
-}
-article.related > a {
-    color: inherit;
-}
-article.related,
-article.related .body .original {
-    padding: 0;
-}
-article.related .original > :first-child ~ * {
-    display: none;
-}
-article.related > p:last-child {
-    margin-top: 0;
-}
-
 
 body > footer {
     display: flex;

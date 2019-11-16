@@ -28,7 +28,7 @@
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Vf7pfceur/normalize.css">
-        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/NEPq13503/printed.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/2wliono/DBnq135l1/printed.css">
         <link rel="stylesheet" href="https://static.tumblr.com/2wliono/Uqtq0rvqb/socicon.css">
         {PostTypographyStyles}
         <style id="dynamic">
@@ -214,57 +214,7 @@
                     <div>{block:HighlightedPosts}
                         <a href="{Permalink}" style="background: url('{PhotoURL-250}') center/cover no-repeat"></a>{/block:HighlightedPosts}
                     </div>
-                </section>{/block:HasHighlightedPosts}{/block:IndexPage}{/block:IfTopPhotos}{block:RelatedPosts}
-                <section id="related">
-                    <h3>{lang:Related Posts}</h3>{block:Posts}
-                    <article id="{PostID}" class="related {PostType} post">
-                        <a href="{Permalink}">
-                            <section class="media">{block:Text}{block:Title}
-                                <h1>{Title}</h1>{/block:Title}{/block:Text}{block:Photo}
-                                <figure>
-                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-                                </figure>{/block:Photo}{block:Panorama}
-                                <figure class="tmblr-full">
-                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-                                </figure>{/block:Panorama}{block:Photoset}
-                                {Photoset}{/block:Photoset}{block:Quote}
-                                <p class="npf_quote {Length}">{Quote}</p>{/block:Quote}{block:Link}
-                                <div class="npf-link-block {block:Thumbnail}has-poster not-{/block:Thumbnail}no-poster">
-                                    <span>{block:Thumbnail}
-                                        <div class="poster" style="background-image: url({Thumbnail-HighRes});">{/block:Thumbnail}
-                                            <div class="title">{Name}</div>{block:Thumbnail}
-                                        </div>{/block:Thumbnail}
-                                        <div class="bottom">{block:Excerpt}
-                                            <div class="description">{Excerpt}</div>{/block:Excerpt}{block:Host}
-                                            <div class="site-name">{Host}</div>{/block:Host}
-                                        </div>
-                                    </span>
-                                </div>{/block:Link}{block:Chat}{block:Title}
-                                <h1>{Title}</h1>{/block:Title}{block:Lines}
-                                <p class="npf_chat">{block:Label}
-                                    <b>{Label}</b>{/block:Label}
-                                    {Line}
-                                </p>{/block:Lines}{/block:Chat}{block:Audio}{block:AudioEmbed}
-                                {AudioEmbed}{/block:AudioEmbed}{/block:Audio}{block:Video}{block:VideoThumbnail}
-                                {VideoThumbnailURL}{/block:VideoThumbnail}{/block:Video}{block:Answer}
-                                <div>
-                                    <img class="avatar" src="{AskerPortraitURL-64}" alt="">
-                                    <strong class="username">{Asker}</strong>
-                                    <blockquote>{Question}</blockquote>
-                                </div>{/block:Answer}
-                            </section>
-                        </a>
-                        <section class="body">{block:NotReblog}
-                            <div class="original">{block:Text}
-                                {Body}{/block:Text}
-                            </div>{/block:NotReblog}{block:Reblogs}{block:isOriginalEntry}
-                            <div class="reblog original">
-                                {Body}
-                            </div>{/block:isOriginalEntry}{/block:Reblogs}
-                        </section>{block:Text}
-                        <p><a href="{Permalink}">{lang:Keep reading}</a></p>{/block:Text}
-                    </article>{/block:Posts}
-                </section>{/block:RelatedPosts}{block:ShowDescription}
+                </section>{/block:HasHighlightedPosts}{/block:IndexPage}{/block:IfTopPhotos}{block:ShowDescription}
                 <section id="about" class="clearfix">{block:ShowAvatar}
                     <img id="avatar" class="{AvatarShape}" src="{PortraitURL-128}" alt="{Name}">{/block:ShowAvatar}
                     <div id="description">{Description}</div>
