@@ -264,6 +264,9 @@ article .body .reblog .user .username {
     vertical-align: middle;
 }
 
+article .body .npf_row img {
+    width: 100%;
+}
 article .body .original > figure.tmblr-full,
 article .body .original .npf_row {
     max-width: none;
@@ -277,10 +280,12 @@ article .body .reblog .npf_row {
     margin-left: 0;
     margin-right: 0;
 }
-:not(.npf_row) > figure.tmblr-full:first-child {
+:not(.npf_row) > figure.tmblr-full:first-child,
+.npf_row:first-child {
     margin-top: 1em;
 }
-:not(.npf_row) > figure.tmblr-full:last-child {
+:not(.npf_row) > figure.tmblr-full:last-child,
+.npf_row:last-child {
     margin-bottom: 1em;
 }
 :not(.npf_row) > figure.tmblr-full img {
