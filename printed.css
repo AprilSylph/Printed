@@ -313,6 +313,7 @@ article .tags a::before {
     content: "#";
 }
 article .tags a {
+    font-size: 85%;
     font-weight: bold;
     display: inline-block;
     margin-right: 1ch;
@@ -321,10 +322,11 @@ article .tags a {
     background-color: var(--AccentColor);
     padding: 0.5ch 1ch;
     border-radius: 2em;
+    opacity: 0.7;
 }
 article .tags a:hover,
 article .tags a:active {
-    background-color: var(--TitleColor);
+    opacity: 1;
 }
 .permalink {
     margin-bottom: 0;
