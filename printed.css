@@ -237,6 +237,9 @@ article.chat .body,
 article.quote .body {
     display: none;
 }
+article .body {
+    line-height: 1.5;
+}
 article .body .reblog:not(.original) {
     margin: 1em 0;
     padding: 15px;
@@ -247,7 +250,6 @@ article .body .reblog:not(.original) {
 }
 article .body .reblog .user {
     margin-top: 0;
-    margin-bottom: 10px;
 }
 article .body .reblog .user a {
     color: inherit;
@@ -280,11 +282,11 @@ article .body .reblog .npf_row {
     margin-left: 0;
     margin-right: 0;
 }
-:not(.npf_row) > figure.tmblr-full:first-child,
+:not(.npf_row) > figure:first-child,
 .npf_row:first-child {
     margin-top: 1em;
 }
-:not(.npf_row) > figure.tmblr-full:last-child,
+:not(.npf_row) > figure:last-child,
 .npf_row:last-child {
     margin-bottom: 1em;
 }
