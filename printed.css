@@ -188,6 +188,9 @@ article.photo .media,
 article.photo .media figure {
     text-align: center;
 }
+.lightbox-image {
+    max-width: none;
+}
 .html_photoset iframe {
     display: block;
     width: 100%;
